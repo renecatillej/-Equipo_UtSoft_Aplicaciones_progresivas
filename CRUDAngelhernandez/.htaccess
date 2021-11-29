@@ -1,0 +1,21 @@
+#regla para evitar uso de .php 
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(,*)$ $1.php
+
+#REDIRECCIONAR EL INDEX O LA PÁGINA PRINCIPAL
+DirectoryIndex vista/inicio/inicio.php
+
+
+#links amigables
+RewriteRule ^ctrl_login$ controlador/login/ctrl_login.php [L]
+
+RewriteRule ^home$ vista/home/home.php [L]
+
+RewriteRule ^pag_2$ vista/home/pagina_2.php [L]
+
+RewriteRule ^ctrl_menu$ controlador/menu/menu.php [L]
+
+RewriteRule ^tbl_users$ controlador/tabla_usuarios/tbl_usuarios.php [L]
+
